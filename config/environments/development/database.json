@@ -4,8 +4,8 @@
     "default": {
       "connector": "mongoose",
       "settings": {
-        "uri": "mongodb+srv://foss-test:DnDBjUZimvEEoVCW@foss-product.1bu0d.mongodb.net",
-        "database": "canvas-board"
+        "uri": "${process.env.DATABASE_URI}",
+        "database": "${process.env.DATABASE_NAME}"
       },
       "options": {
         "ssl": true
