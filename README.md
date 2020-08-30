@@ -1,3 +1,3 @@
-# Strapi application
+# Canvas board
 
-A quick description of your strapi application
+GraphQL and REST API for canvas board with Strapi and Koa
