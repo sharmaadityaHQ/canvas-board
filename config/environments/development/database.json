@@ -1,0 +1,15 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "mongoose",
+      "settings": {
+        "uri": "mongodb+srv://foss-test:DnDBjUZimvEEoVCW@foss-product.1bu0d.mongodb.net",
+        "database": "canvas-board"
+      },
+      "options": {
+        "ssl": true
+      }
+    }
+  }
+}
