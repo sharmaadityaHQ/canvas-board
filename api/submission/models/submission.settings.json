@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "submissions",
+  "info": {
+    "name": "Submission"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Score": {
+      "required": true,
+      "type": "float"
+    },
+    "DueDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "Grade": {
+      "type": "string",
+      "required": true
+    },
+    "TeacherComments": {
+      "type": "richtext"
+    },
+    "StudentComments": {
+      "type": "richtext"
+    },
+    "assignment": {
+      "model": "assignment",
+      "via": "submissions"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "submissions"
+    },
+    "Files": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "boards",
+  "info": {
+    "name": "Board"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "boards"
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": false
+    },
+    "Public": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "Content": {
+      "type": "json",
+      "required": true
+    },
+    "course": {
+      "model": "course",
+      "via": "boards"
+    }
+  }
+}

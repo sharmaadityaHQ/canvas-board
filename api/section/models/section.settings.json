@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "sections",
+  "info": {
+    "name": "Section"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "section"
+    },
+    "courses": {
+      "via": "section",
+      "collection": "course"
+    },
+    "assignments": {
+      "via": "section",
+      "collection": "assignment"
+    }
+  }
+}

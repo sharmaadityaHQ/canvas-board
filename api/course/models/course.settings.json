@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "courses",
+  "info": {
+    "name": "Course"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "section": {
+      "model": "section",
+      "via": "courses"
+    },
+    "boards": {
+      "via": "course",
+      "collection": "board"
+    }
+  }
+}

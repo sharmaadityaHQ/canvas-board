@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "assignments",
+  "info": {
+    "name": "Assignment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "subTitle": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "richtext",
+      "required": true
+    },
+    "MaxScore": {
+      "required": true,
+      "type": "integer"
+    },
+    "createdBy": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "assignments"
+    },
+    "submissions": {
+      "via": "assignment",
+      "collection": "submission"
+    },
+    "Attachements": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "section": {
+      "model": "section",
+      "via": "assignments"
+    }
+  }
+}
